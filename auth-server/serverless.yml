@@ -11,6 +11,8 @@
 #
 # Happy Coding!
 
+# Spacing and indenting matter in this file. After every ":", the next line will need to be nested within, or indented beyond
+
 service: auth-server
 # app and org for use with dashboard.serverless.com
 #app: your-app-name
@@ -71,6 +73,12 @@ functions:
         - http:
           path: api/get-auth-url
           method: get
+    getAccessToken:
+      handler: handler.getAccessToken
+      events:
+        - http:
+          path: api/token/{code}
+          method: get      
   # hello:
   #   handler: handler.hello
 #    The following are a few example events you can configure
