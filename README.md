@@ -1,6 +1,6 @@
-Meet App
+**MEET APP**
 
-Key Features 
+**Key Features**
 1. Filter events by city. 
 2. Show/hide event details. 
 3. Specify number of events. 
