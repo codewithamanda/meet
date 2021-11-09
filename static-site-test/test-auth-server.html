@@ -44,7 +44,7 @@
         const getCodeElement = document.getElementById("getCode");
         const resultElement = document.getElementById("result");
         const resultLink = document.getElementById("authURL");
-        const getAuthURL = "https://q4avcu9wzi.execute-api.us-west-2.amazonaws.com/dev/auth-server-dev-getAuthURL";
+        const getAuthURL = "https://8m47bijskh.execute-api.us-west-2.amazonaws.com/dev/api/get-auth-url";
 
         getCodeElement.onclick = function() {
             fetch(getAuthURL)
@@ -68,7 +68,7 @@
         const codeValue = document.getElementById("code");
         const getAccessToken = document.getElementById("getToken");
         const accessTokenElement = document.getElementById("accessToken");
-        const getToken = "https://q4avcu9wzi.execute-api.us-west-2.amazonaws.com/dev/auth-server-dev-getAccessToken";
+        const getToken = "https://8m47bijskh.execute-api.us-west-2.amazonaws.com/dev/api/token/{code}";
 
         getAccessToken.onclick = function() {
             let code = codeValue.value;
