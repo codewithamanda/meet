@@ -18,15 +18,15 @@ describe('<Event /> component', () => {
   });
 
   test('renders summary in the collapsed event element', () => {
-    expect(eventWrapper.find('.summary')).toHaveLength(0);
+    expect(eventWrapper.find('.summary')).toHaveLength(1);
   });
 
   test('renders date in the collapsed event element', () => {
-    expect(eventWrapper.find('.start-date')).toHaveLength(0);
+    expect(eventWrapper.find('.start-date')).toHaveLength(1);
   });
 
   test('renders location in the collapsed event element', () => {
-    expect(eventWrapper.find('.location')).toHaveLength(0);
+    expect(eventWrapper.find('.location')).toHaveLength(1);
   });
 
   test('renders a button to show details', () => {

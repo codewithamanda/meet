@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import { InfoAlert } from './Alert';
 
 class CitySearch extends Component {
     state = {
@@ -30,16 +31,17 @@ class CitySearch extends Component {
   render() {
     return (
       <div className='CitySearch'>
-
         <input
           type='text'
           className='city'
+          placeholder='Search for a city'
           value={this.state.query}
           onChange={this.handleInputChanged}
           onFocus={() => { this.setState({ showSuggestions: true }) }}
         />
 
-        <ul className='suggestions'>
+        <ul className='suggestions' style={this.state.showSuggestions ? {}: { display: 'none' }}>
+
           {this.state.suggestions.map((suggestion) => (
 
           <li
@@ -48,7 +50,7 @@ class CitySearch extends Component {
           >{suggestion}</li>
           ))}
 
-          <li key='all'>
+          <li onClick={() => this.handleItemClicked('all')}>
             <b>See All Cities</b>
           </li>
         </ul>
