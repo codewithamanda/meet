@@ -4,6 +4,7 @@ import NumberOfEvents from '../NumberOfEvents';
 
 describe('<NumberOfEvents /> component unit test', () => {
   let NumberOfEventsWrapper;
+  
   beforeAll(() => {
     NumberOfEventsWrapper = shallow(<NumberOfEvents />);
   });
@@ -19,3 +20,4 @@ describe('<NumberOfEvents /> component unit test', () => {
    });
 
 })
+

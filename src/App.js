@@ -14,29 +14,31 @@ class App extends Component {
     locations: [],
     numberOfEvents: 32,
   }
-  // constructor(props) {
-  // super(props)
 
-  // this.state = {
-  //   events: [],
-  //   locations: [],
-  //   numberOfEvents: 32,
-  // }
-
-  updateEvents = (location) => {
+  updateEvents = (location, eventCount) => {
     getEvents().then((events) => {
-      const locationEvents = (location === 'all') ?
-        events :
-        events.filter((event) => event.location === location);
-      this.setState({
-        events: locationEvents
-      });
+      const locationEvents =
+        location === "all"
+          ? events
+          : events.filter((event) => event.location === location);
+      if (this.mounted) {
+        this.setState({
+          events: locationEvents.slice(0, this.state.numberOfEvents),
+          currentLocation: location,
+        });
+      }
     });
-  }
-
+  };
+  
   componentDidMount() {
+    this.mounted = true;
     getEvents().then((events) => {
-      this.setState({ events, locations: extractLocations(events) });
+      if (this.mounted) {
+        this.setState({
+          events: events.slice(0, this.state.numberOfEvents),
+          locations: extractLocations(events),
+        });
+      }
     });
   }
 

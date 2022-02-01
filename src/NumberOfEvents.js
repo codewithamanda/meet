@@ -11,7 +11,7 @@ class NumberOfEvents extends Component {
     return (
       <div className='EventNumberComponent'>
 
-      <label htmlFor='numberOfEventsInput'> Number of Events on Page:
+      <label className='eventsLabel' htmlFor='numberOfEventsInput'> Number of Events on Page:
 
       <input
         id='numberOfEventsInput'
